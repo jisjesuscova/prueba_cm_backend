@@ -1,0 +1,52 @@
+#home_logo {
+    width: 30% !important;
+    padding-top: 190px !important;
+}
+
+#login_logo {
+    width: 30% !important;
+}
+
+a.nav-link {
+    color: #000 !important;
+}
+
+a.nav-link.active {
+    color: #000 !important;
+}
+
+.o-pag__link--current {
+    pointer-events: none;
+    background-color: #000 !important;
+    border-color: #000 !important;
+    color: #fff;
+}
+
+.sidebar-dark-primary {
+    background-color:  #086cdc !important;
+}
+
+.card-success > .card-header {
+    background-color: #a4c4f4 !important;
+}
+
+.login-button {
+    background-color:  #086cdc !important;
+}
+
+.login-button:hover {
+    background-color: #a4c4f4 !important;
+}
+
+#login-logo {
+    width: 60% !important;
+    padding-bottom: 90px;
+}
+
+.content-wrapper {
+    background-color: #fff !important;
+}
+
+.loading {
+    margin-top: 200px !important;
+}
