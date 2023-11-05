@@ -4,3 +4,7 @@
 
 Podrás encontrar el backend del aplicativo, el cual se encarga de enviar notificaciones al aplicatico de celular.
 
+## Tecnologias
+
+Php 8.1, Laravel 10, Vite, Bootstrap, Oruga UI.
+
