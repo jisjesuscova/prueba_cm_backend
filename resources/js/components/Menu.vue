@@ -16,7 +16,7 @@
                     </li>
                     <li class="nav-item">
                         <router-link to="/notification/create" class="nav-link" data-widget="pushmenu" @click="toggleSidebar">
-                            <i class="nav-icon fas fa-handshake"></i>
+                            <i class="nav-icon fas fa-envelope"></i>
                             Notificaciones
                         </router-link>
                     </li>
