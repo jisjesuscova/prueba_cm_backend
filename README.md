@@ -3,7 +3,7 @@
 
 ## Proyecto de Prueba para el Cargo de Desarrollador
 
-Podrás encontrar el backend del aplicativo, el cual se encarga de enviar notificaciones al aplicatico de celular, tanto por formulario como una notificación por Crontab cada 10 minutos.
+Podrás encontrar el backend del aplicativo, el cual se encarga de enviar notificaciones al aplicatico de celular, tanto por formulario de forma manual como una notificación automática por Crontab cada 10 minutos.
 
 ## Tecnologias
 
