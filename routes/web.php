@@ -31,11 +31,7 @@ Route::get('/account', function () {
     return view('home');
 });
 
-Route::get('/alliances', function () {
-    return view('home');
-});
-
-Route::get('/alliance/create', function () {
+Route::get('/notification/create', function () {
     return view('home');
 });
 
