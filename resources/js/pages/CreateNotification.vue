@@ -65,7 +65,7 @@
 
                                                 <router-link
                                                     href="javascript:;"
-                                                    to="/alliances"
+                                                    to="/"
                                                     class="btn btn-danger ml-2"
                                                 >
                                                     <i
