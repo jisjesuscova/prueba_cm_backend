@@ -25,7 +25,7 @@
                         <div v-else>
                             <div class="card card-success">
                                 <div class="card-header">
-                                    <h3 class="card-title">Crear Alianza</h3>
+                                    <h3 class="card-title">Crear Notificación</h3>
                                 </div>
                                 <form @submit.prevent="submit">
                                     <div class="card-body">

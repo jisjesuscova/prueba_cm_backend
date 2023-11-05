@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Account from './pages/Account.vue'
-import Notification from './pages/Notification.vue'
+import CreateNotification from './pages/CreateNotification.vue'
 import Setting from './pages/Setting.vue'
 
 const routes = [
@@ -10,9 +10,9 @@ const routes = [
         component: Account
     },
     {
-        name:'notifications',
-        path:'/notifications',
-        component: Notification
+        name:'notification/create',
+        path:'/notification/create',
+        component: CreateNotification
     },
     {
         name:'settings',
