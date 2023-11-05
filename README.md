@@ -6,5 +6,5 @@ Podrás encontrar el backend del aplicativo, el cual se encarga de enviar notifi
 
 ## Tecnologias
 
-Php 8.1, Laravel 10, Vite, Bootstrap, Oruga UI.
+Php 8.1, Laravel 10, Vite, Bootstrap, Oruga UI, JWT con Sactum.
 
