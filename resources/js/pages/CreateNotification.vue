@@ -30,26 +30,9 @@
                                 <form @submit.prevent="submit">
                                     <div class="card-body">
                                         <div class="row mt-4">
-                                            <div class="col-md-4">
-                                                <label for="rut"
-                                                    >RUT
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    v-mask="['########-X']"
-                                                    required
-                                                    type="text"
-                                                    class="form-control"
-                                                    v-model="rut_input"
-                                                    placeholder="RUT"
-                                                    aria-label="RUT"
-                                                />
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="alliance_name"
-                                                    >Nombre de la Alianza
+                                            <div class="col-md-12">
+                                                <label for="message"
+                                                    >Mensaje
                                                     <span class="text-danger"
                                                         >*</span
                                                     ></label
@@ -58,115 +41,12 @@
                                                     required
                                                     type="text"
                                                     class="form-control"
-                                                    v-model="name_input"
-                                                    placeholder="Nombre de la Alianza"
-                                                    aria-label="Nombre de la Alianza"
+                                                    v-model="message_input"
+                                                    placeholder="Mensaje"
+                                                    aria-label="Mensaje"
                                                 />
                                             </div>
-                                            <div class="col-md-4">
-                                                <label for="alliance_alias"
-                                                    >Alias de Alianza
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    required
-                                                    type="text"
-                                                    class="form-control"
-                                                    v-model="alia_input"
-                                                    placeholder="Alias de la Alianza"
-                                                    aria-label="Nombre de la Alianza"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div class="row mt-4">
-                                            <div class="col-md-4">
-                                                <label for="alliance_contact"
-                                                    >Contácto
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    required
-                                                    type="text"
-                                                    class="form-control"
-                                                    v-model="contact_input"
-                                                    placeholder="Contácto"
-                                                    aria-label="Contácto"
-                                                />
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="alliance_email"
-                                                    >Correo de Contácto
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    required
-                                                    type="email"
-                                                    class="form-control"
-                                                    v-model="
-                                                        contact_email_input
-                                                    "
-                                                    placeholder="Correo de Contácto"
-                                                    aria-label="Correo de Contácto"
-                                                />
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="alliance_phone"
-                                                    >Teléfono de Contácto<span
-                                                        class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    required
-                                                    type="number"
-                                                    class="form-control"
-                                                    v-model="
-                                                        contact_phone_input
-                                                    "
-                                                    placeholder="Teléfono de Contácto"
-                                                    aria-label="Teléfono de Contácto"
-                                                />
-                                            </div>
-                                        </div>
-                                        <div class="row mt-4">
-                                            <div class="col-md-4">
-                                                <label for="alliance_start_date"
-                                                    >Fecha de Inicio
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    required
-                                                    type="date"
-                                                    class="form-control"
-                                                    v-model="start_date_input"
-                                                    placeholder="Fecha de Inicio"
-                                                    aria-label="Fecha de Inicio"
-                                                />
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="alliance_end_date"
-                                                    >Fecha de Fin
-                                                    <span class="text-danger"
-                                                        >*</span
-                                                    ></label
-                                                >
-                                                <input
-                                                    required
-                                                    type="date"
-                                                    class="form-control"
-                                                    v-model="end_date_input"
-                                                    placeholder="Fecha de Fin"
-                                                    aria-label="Fecha de Fin"
-                                                />
-                                            </div>
+                                           
                                         </div>
                                     </div>
 
@@ -214,14 +94,7 @@ export default {
     data() {
         return {
             loading: true,
-            rut_input: "",
-            name_input: "",
-            alia_input: "",
-            contact_input: "",
-            contact_email_input: "",
-            contact_phone_input: "",
-            start_date_input: "",
-            end_date_input: "",
+            message_input: ""
         };
     },
     methods: {
@@ -231,18 +104,11 @@ export default {
 
             const formData = new FormData();
 
-            formData.append("rut", this.rut_input);
-            formData.append("name", this.name_input);
-            formData.append("alias", this.alia_input);
-            formData.append("contact", this.contact_input);
-            formData.append("contact_email", this.contact_email_input);
-            formData.append("contact_phone", this.contact_phone_input);
-            formData.append("start_date", this.start_date_input);
-            formData.append("end_date", this.end_date_input);
+            formData.append("message", this.message_input);
 
             try {
                 const response = await axios.post(
-                    "https://binfrix.com/api/alliance/store",
+                    "https://binfrix.com/api/notification/store",
                     formData,
                     {
                         headers: {
@@ -262,7 +128,7 @@ export default {
     async mounted() {
         setTimeout(() => {
             this.loading = false;
-        }, 5000);
+        }, 2000);
     },
 };
 </script>
