@@ -62,10 +62,10 @@
                                         </o-table-column>
                                         <o-table-column
                                             field="hour"
-                                            label="Hora"
+                                            label="Hora del Servidor"
                                             v-slot="p"
                                         >
-                                            {{ p.row.hour }}
+                                            {{ formarDate(p.row.hour) }}
                                         </o-table-column>
                                     </o-table>
                                     <hr />
@@ -135,6 +135,8 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
     data() {
         return {
@@ -145,6 +147,9 @@ export default {
         };
     },
     methods: {
+        formarDate(date) {
+            return moment(date).format("DD/MM/YYYY HH:mm:ss");
+        },
         updatePage() {
             setTimeout(this.getData, 200);
         },
