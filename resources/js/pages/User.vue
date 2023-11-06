@@ -79,7 +79,7 @@
                                             label="Última actualización"
                                             v-slot="p"
                                         >
-                                            {{ p.row.updated_at }}
+                                            {{ formatDate(p.row.updated_at) }}
                                         </o-table-column>
                                     </o-table>
                                     <hr />
@@ -149,6 +149,8 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
     data() {
         return {
@@ -159,6 +161,9 @@ export default {
         };
     },
     methods: {
+        formatDate(date) {
+            return moment(date).format('DD/MM/YYYY HH:mm:ss');
+        },
         updatePage() {
             setTimeout(this.getData, 200);
         },
