@@ -43,9 +43,9 @@ class NotificationController extends Controller
                 'img' => 0
             ]);
 
-            $SERVER_API_KEY = 'AAAAPUCdCsE:APA91bHKoNKTB-ZI8WN6QCWuB540KMBvEDl1JSvtjWIvdEsCwwwL2frnIZCAXpmF85891BiC4Ts6-funDiRMJLFFflWB4UmjJ_Z2v3AkoS4UpSa73_1ejkR7_0JfFGqS70uwEkBTwmPx';
+            $SERVER_API_KEY = env('FIREBASE_API_KEY');
 
-            $token = 'fdmQTGz3QyuDZ9PMY-6Q8C:APA91bGP5zF8XocGqljBNtV3IaqVfbw2a13f0lFx4Mfb-utcdpUoGp5RhEVXNSmTv_bIu7yi4UxTfvFUmuskKIrvFxhLGjOPssgVZvBHDhDjOk00gJOm2idP2FITkJH6gMN5F7yQ52nQ';
+            $token = env('FIREBASE_APP_TOKEN');
         
             $data = [
         
