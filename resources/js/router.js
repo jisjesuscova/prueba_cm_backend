@@ -4,6 +4,7 @@ import Notification from './pages/Notification.vue';
 import CreateNotification from './pages/CreateNotification.vue';
 import Setting from './pages/Setting.vue';
 import User from './pages/User.vue';
+import NotificationDashboard from './pages/NotificationDashboard.vue';
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         name:'users',
         path:'/users',
         component: User
+    },
+    {
+        name:'notificaction/dashboard',
+        path:'/notification/dashboard',
+        component: NotificationDashboard
     }
 ]
 

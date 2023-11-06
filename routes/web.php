@@ -43,4 +43,8 @@ Route::get('/users', function () {
     return view('home');
 });
 
+Route::get('/notification/dashboard', function () {
+    return view('home');
+});
+
 require __DIR__.'/auth.php';

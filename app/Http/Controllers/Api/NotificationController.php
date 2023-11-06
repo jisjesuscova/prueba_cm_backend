@@ -24,6 +24,25 @@ class NotificationController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     */
+    public function dashboard()
+    {
+        $dashboard = Notification::select(
+            DB::raw('DATE_FORMAT(created_at, "%Y-%m-%d %H:00:00") as hour'),
+            DB::raw('COUNT(*) as quantity')
+        )
+        ->groupBy('hour')
+        ->get();
+
+        return response()->json([
+            'success' => true,
+            'data' => $dashboard
+        ], 200);
+    }
+
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
