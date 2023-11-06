@@ -28,8 +28,8 @@ class SendNotifications extends Command
     public function handle()
     {
         $notification = Notification::create([
-            'title' => 'Title Number',
-            'body' => 'Message Number',
+            'title' => 'Title Number 1',
+            'body' => 'Message Number 1',
             'img' => 0
         ]);
 
