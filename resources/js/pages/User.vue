@@ -69,14 +69,14 @@
                                         </o-table-column>
                                         <o-table-column
                                             field="email"
-                                            label="Email"
+                                            label="Correo"
                                             v-slot="p"
                                         >
                                             {{ p.row.email }}
                                         </o-table-column>
                                         <o-table-column
                                             field="updated_at"
-                                            label="Updated_at"
+                                            label="Última actualización"
                                             v-slot="p"
                                         >
                                             {{ p.row.updated_at }}
