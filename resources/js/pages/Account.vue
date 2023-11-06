@@ -30,8 +30,6 @@ export default {
     async getNotificationQuantity() {
       const token = localStorage.getItem("token");
 
-      alert(token)
-
       try {
         const response = await axios.get(
           "https://binfrix.com/api/notification/quantity/",
