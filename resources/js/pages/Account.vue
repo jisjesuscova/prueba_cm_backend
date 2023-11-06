@@ -4,7 +4,7 @@
     <div class="content">
       <div class="container-fluid">
         <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-          <div class="card-header">Cantidad Notificaciones - <router-link to="/notification/dashboard"></router-link> </div>
+          <div class="card-header">Cantidad Notificaciones - <router-link to="/notification/dashboard">Ver Datos</router-link> </div>
           <div class="card-body">
             <h5 class="card-title">{{ notification_quantity }}</h5>
           </div>
