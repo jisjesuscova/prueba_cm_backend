@@ -7,6 +7,7 @@ use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+
 class NotificationController extends Controller
 {
     /**
@@ -34,7 +35,8 @@ class NotificationController extends Controller
             DB::raw('COUNT(*) as quantity')
         )
         ->groupBy('hour')
-        ->get();
+        ->orderBy('hour', 'desc')
+        ->paginate(50);
 
         return response()->json([
             'success' => true,
