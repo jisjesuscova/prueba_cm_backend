@@ -39,6 +39,8 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $token = Auth::user()->createToken('authToken')->plainTextToken;
 
+            User::where('id', Auth::user()->id)->update(['updated_at' => now()]);
+
             return response()->json([
                 'success' => true,
                 'data' => [
