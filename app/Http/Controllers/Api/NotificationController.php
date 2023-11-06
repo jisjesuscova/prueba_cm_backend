@@ -36,6 +36,8 @@ class NotificationController extends Controller
      */
     public function store(Request $request)
     {
+        $notification_quantity = Notification::select('id', 'title', 'body', 'img', 'created_at')->count();
+        
         try {
             $notification = Notification::create([
                 'title' => $request->title,
