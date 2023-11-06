@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Alliance extends Model
+class Notification extends Model
 {
     use HasFactory;
 
@@ -15,14 +15,8 @@ class Alliance extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'status_id',
-        'rut',
-        'name',
-        'alias',
-        'contact',
-        'contact_email',
-        'contact_phone',
-        'start_date',
-        'end_date'
+        'title',
+        'body',
+        'img'
     ];
 }

@@ -10,7 +10,7 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item active">
                                 <router-link
-                                    to="/alliance/create"
+                                    to="/notification/create"
                                     class="btn btn-block btn-success"
                                     >Agregar</router-link
                                 >
@@ -65,29 +65,18 @@
                                             {{ p.row.id }}
                                         </o-table-column>
                                         <o-table-column
-                                            field="cashier"
-                                            label="Caja"
+                                            field="title"
+                                            label="Titulo"
                                             v-slot="p"
                                         >
-                                            {{ p.row.cashier }}
+                                            {{ p.row.title }}
                                         </o-table-column>
                                         <o-table-column
-                                            field=""
-                                            label=""
+                                            field="body"
+                                            label="Mensaje"
                                             v-slot="p"
                                         >
-                                            <router-link
-                                                :to="`/cashier/edit/${p.row.id}`"
-                                                class="btn btn-success mr-2"
-                                            >
-                                                <i class="fa-solid fa-pencil"></i>
-                                            </router-link>
-                                            <o-button
-                                                variant="danger"
-                                                @click="deleteCashier(p.row.id)"
-                                            >
-                                                <i class="fa-solid fa-trash"></i>
-                                            </o-button>
+                                            {{ p.row.body }}
                                         </o-table-column>
                                     </o-table>
                                     <hr />
@@ -177,7 +166,7 @@ export default {
 
             try {
                 const response = await axios.get(
-                    "https://binfrix.com/api/alliance/",
+                    "https://binfrix.com/api/notification/",
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,

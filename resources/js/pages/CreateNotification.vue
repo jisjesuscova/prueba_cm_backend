@@ -30,7 +30,23 @@
                                 <form @submit.prevent="submit">
                                     <div class="card-body">
                                         <div class="row mt-4">
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
+                                                <label for="message"
+                                                    >Titulo
+                                                    <span class="text-danger"
+                                                        >*</span
+                                                    ></label
+                                                >
+                                                <input
+                                                    required
+                                                    type="text"
+                                                    class="form-control"
+                                                    v-model="title_input"
+                                                    placeholder="Título"
+                                                    aria-label="Título"
+                                                />
+                                            </div>
+                                            <div class="col-md-6">
                                                 <label for="message"
                                                     >Mensaje
                                                     <span class="text-danger"
@@ -46,7 +62,6 @@
                                                     aria-label="Mensaje"
                                                 />
                                             </div>
-                                           
                                         </div>
                                     </div>
 
@@ -60,12 +75,12 @@
                                                     <i
                                                         class="fa-solid fa-check"
                                                     ></i>
-                                                    Guardar
+                                                    Enviar
                                                 </button>
 
                                                 <router-link
                                                     href="javascript:;"
-                                                    to="/"
+                                                    to="/notifications"
                                                     class="btn btn-danger ml-2"
                                                 >
                                                     <i
@@ -94,16 +109,18 @@ export default {
     data() {
         return {
             loading: true,
+            title_input: "",
             message_input: ""
         };
     },
     methods: {
         async submit() {
-            this.isLoading = true;
+            this.loading = true;
             const token = localStorage.getItem("token");
 
             const formData = new FormData();
 
+            formData.append("title", this.title_input);
             formData.append("message", this.message_input);
 
             try {
@@ -118,10 +135,10 @@ export default {
                     }
                 );
 
-                this.posts = response.data.data;
-                this.isLoading = false;
+                this.$router.push('/notifications')
+                this.loading = false;
             } catch (error) {
-                console.error("Error al guardar la alianza:", error);
+                console.error("Error al guardar la notificación:", error);
             }
         },
     },

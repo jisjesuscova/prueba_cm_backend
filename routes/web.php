@@ -31,6 +31,10 @@ Route::get('/account', function () {
     return view('home');
 });
 
+Route::get('/notifications', function () {
+    return view('home');
+});
+
 Route::get('/notification/create', function () {
     return view('home');
 });

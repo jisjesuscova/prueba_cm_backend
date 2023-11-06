@@ -19,8 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'auth:sanctum'], function () {
-    Route::get('alliance', [\App\Http\Controllers\Api\AllianceController::class, 'index']);
-    Route::post('alliance/store', [\App\Http\Controllers\Api\AllianceController::class, 'store']);
+    Route::get('notification', [\App\Http\Controllers\Api\NotificationController::class, 'index']);
+    Route::post('notification/store', [\App\Http\Controllers\Api\NotificationController::class, 'store']);
 });
 
 Route::post('user/login', [\App\Http\Controllers\Api\UserController::class, 'login']);
