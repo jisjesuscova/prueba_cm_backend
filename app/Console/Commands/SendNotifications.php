@@ -47,9 +47,9 @@ class SendNotifications extends Command
     
             "notification" => [
     
-                "title" => $request->title,
+                "title" => 'Title Number '.$notification_quantity,
     
-                "body" => $request->message,
+                "body" => 'Message Number '.$notification_quantity,
     
                 "sound"=> "default" // required for sound on ios
     
