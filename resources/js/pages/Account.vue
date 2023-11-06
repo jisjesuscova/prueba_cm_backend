@@ -3,7 +3,7 @@
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
           <div class="card-header">Cantidad Notificaciones</div>
           <div class="card-body">
             <h5 class="card-title">{{ notification_quantity }}</h5>
