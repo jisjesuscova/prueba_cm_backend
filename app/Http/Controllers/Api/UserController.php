@@ -14,6 +14,21 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function index()
+    {
+        $users = User::select('id', 'name', 'email', 'updated_at')
+             ->orderByDesc('id')
+             ->paginate(50);
+
+        return response()->json([
+            'success' => true,
+            'data' => $users
+        ], 200);
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
     public function login(Request $request)
     {
         $credentials = [

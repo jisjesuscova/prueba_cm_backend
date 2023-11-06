@@ -21,6 +21,12 @@
                         </router-link>
                     </li>
                     <li class="nav-item">
+                        <router-link to="/users" class="nav-link" data-widget="pushmenu" @click="toggleSidebar">
+                            <i class="nav-icon fas fa-users"></i>
+                            Usuarios
+                        </router-link>
+                    </li>
+                    <li class="nav-item">
                         <a @click="Logout" href="javascript:;" class="nav-link">
                             <i class="nav-icon fas fa-door-open"></i>
                             Salir

@@ -39,4 +39,8 @@ Route::get('/notification/create', function () {
     return view('home');
 });
 
+Route::get('/users', function () {
+    return view('home');
+});
+
 require __DIR__.'/auth.php';

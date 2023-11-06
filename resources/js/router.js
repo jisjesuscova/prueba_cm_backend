@@ -1,8 +1,9 @@
 import { createWebHistory, createRouter } from "vue-router";
-import Account from './pages/Account.vue'
-import Notification from './pages/Notification.vue'
-import CreateNotification from './pages/CreateNotification.vue'
-import Setting from './pages/Setting.vue'
+import Account from './pages/Account.vue';
+import Notification from './pages/Notification.vue';
+import CreateNotification from './pages/CreateNotification.vue';
+import Setting from './pages/Setting.vue';
+import User from './pages/User.vue';
 
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         name:'settings',
         path:'/settings',
         component: Setting
+    },
+    {
+        name:'users',
+        path:'/users',
+        component: User
     }
 ]
 
