@@ -179,14 +179,7 @@ export default {
                 this.loading = false;
                 this.isLoading = false;
             } catch (error) {
-                console.error("Error al obtener la lista de alianzas:", error);
-            }
-        },
-        deleteCashier(id) {
-            if (confirm("¿Estás seguro de que deseas eliminar el registro?")) {
-                this.$axios.delete("api/alliance/" + id).then((res) => {
-                    this.listPage();
-                });
+                console.error("Error al obtener la lista de notificaciones:", error);
             }
         },
     },

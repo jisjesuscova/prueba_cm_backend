@@ -133,4 +133,17 @@ class NotificationController extends Controller
     {
         //
     }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function quantity()
+    {
+        $notification_quantity = Notification::select('id', 'title', 'body', 'img', 'created_at')->count();
+
+        return response()->json([
+            'success' => true,
+            'data' => $notification_quantity
+        ], 200);
+    }
 }
