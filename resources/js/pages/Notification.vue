@@ -79,24 +79,6 @@
                                             {{ p.row.body }}
                                         </o-table-column>
                                     </o-table>
-                                    <hr />
-                                    <o-pagination
-                                        v-if="
-                                            posts.current_page &&
-                                            posts.data.length > 0
-                                        "
-                                        @change="updatePage"
-                                        :total="posts.total"
-                                        v-model:current="currentPage"
-                                        :range-before="2"
-                                        :range-after="2"
-                                        order="centered"
-                                        :size="small"
-                                        :simple="false"
-                                        :rounded="true"
-                                        :per-page="posts.per_page"
-                                    >
-                                    </o-pagination>
                                 </div>
                             </div>
                         </div>
