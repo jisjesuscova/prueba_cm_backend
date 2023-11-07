@@ -82,5 +82,7 @@ class SendNotifications extends Command
         curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
     
         $response = curl_exec($ch);
+
+        dd($response);
     }
 }
