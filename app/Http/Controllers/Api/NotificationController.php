@@ -113,9 +113,6 @@ class NotificationController extends Controller
         
             $response = curl_exec($ch);
 
-            print_r($response);
-            die();
-
             return response()->json([
                 'success' => true,
                 'data' => $notification
