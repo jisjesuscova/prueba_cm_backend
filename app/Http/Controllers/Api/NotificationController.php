@@ -113,12 +113,12 @@ class NotificationController extends Controller
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);
             
                 $response = curl_exec($ch);
-
-                return response()->json([
-                    'success' => true,
-                    'data' => $notification
-                ], 200);
             }
+
+            return response()->json([
+                'success' => true,
+                'data' => $notification
+            ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'success' => false,
