@@ -83,6 +83,6 @@ class SendNotifications extends Command
     
         $response = curl_exec($ch);
 
-        dd($response);
+        print_r($response);
     }
 }
