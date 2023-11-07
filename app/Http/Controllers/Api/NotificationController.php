@@ -67,41 +67,39 @@ class NotificationController extends Controller
 
             $SERVER_API_KEY = env('FIREBASE_API_KEY');
 
-            $token = env('FIREBASE_APP_TOKEN');
-        
-            $data = [
-        
-                "registration_ids" => [
-                    $token
-                ],
-        
-                "notification" => [
-        
-                    "title" => $request->title,
-        
-                    "body" => $request->message,
-        
-                    "sound"=> "default" // required for sound on ios
-        
-                ],
-        
-            ];
-        
-            $dataString = json_encode($data);
-        
-            $headers = [
-        
-                'Authorization: key=' . $SERVER_API_KEY,
-        
-                'Content-Type: application/json',
-        
-            ];
-        
-            $ch = curl_init();
-
             $tokens = Token::select('token')->get();
             
             foreach ($tokens as $token) {
+                $data = [
+        
+                    "registration_ids" => [
+                        $token->token
+                    ],
+            
+                    "notification" => [
+            
+                        "title" => $request->title,
+            
+                        "body" => $request->message,
+            
+                        "sound"=> "default" // required for sound on ios
+            
+                    ],
+            
+                ];
+            
+                $dataString = json_encode($data);
+            
+                $headers = [
+            
+                    'Authorization: key=' . $SERVER_API_KEY,
+            
+                    'Content-Type: application/json',
+            
+                ];
+            
+                $ch = curl_init();
+
                 curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
         
                 curl_setopt($ch, CURLOPT_POST, true);
